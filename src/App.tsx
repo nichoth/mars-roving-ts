@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
 import { useAppDispatch, useAppSelector } from './app/hooks';
-import { incremented, amountAdded } from './features/counter/counterSlice';
+import { /*increment,*/ amountAdded } from './features/counter/counterSlice';
 // import { useFetchBreedsQuery } from './features/dogs/dogs-api-slice';
-import logo from './logo.svg'
+// import logo from './logo.svg'
 import './App.css'
+// import logo from './logo.svg'
 
 function App() {
-  const count = useAppSelector((state) => state.counter.value);
+  const value = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
 
   const [numDogs, setNumDogs] = useState(10);
-  const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
+  // const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
 
   function handleClick() {
     // increment by 1
-    // dispatch(incremented());
+    // dispatch(increment());
 
     // increment by a fixed amount
     dispatch(amountAdded(3));
@@ -23,11 +24,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>Hello Vite + React!</p>
         <p>
           <button onClick={handleClick}>
-            count is: {count}
+            count is: {value}
           </button>
         </p>
         
@@ -41,7 +42,7 @@ function App() {
           </select>
         </div>
         
-        <div>
+        {/* <div>
           <p>Number of dogs fetched: {data.length}</p>
           <table>
             <thead>
@@ -61,7 +62,7 @@ function App() {
               ))}
             </tbody>
           </table>
-        </div>
+        </div> */}
 
         <p>
           <a
